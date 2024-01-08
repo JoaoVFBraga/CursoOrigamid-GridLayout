@@ -1,0 +1,343 @@
+/* CSS Reset */
+
+body, p, h1, ul, li, blockquote, span {
+    padding: 0px;
+    margin: 0px;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+body {
+    font-family: 'Vollkorn', Georgia, serif;
+}
+img {
+    border-radius: 5px;
+}
+
+/* Estrutura */
+
+.estrutura {
+    display: grid;
+    grid-template-columns: minmax(160px, 0.8fr) 3fr 300px;
+    grid-template-areas: 
+    "header header header"
+    "nav content aside"
+    "footer footer footer"
+    ;
+}
+@media (max-width: 1300px) {
+    .estrutura {
+        grid-template-columns: minmax(160px, 0.8fr) 3fr;
+        grid-template-areas: 
+        "header header header"
+        "nav content content"
+        "nav aside aside"
+        "footer footer footer"
+        ;
+    }
+}
+@media (max-width: 850px) {
+    .estrutura {
+        grid-template-columns: 100%;
+        grid-template-areas: 
+        "header"
+        "nav"
+        "content"
+        "aside"
+        "footer"
+        ;
+    }
+}
+
+.header {
+    grid-area: header;
+}
+.nav {
+    grid-area: nav;
+}
+.content {
+    grid-area: content;
+}
+.aside {
+    grid-area: aside;
+}
+.footer {
+    grid-area: footer;
+}
+
+/* Header */
+
+.header {
+    background: linear-gradient(135deg, #8844ee, #b07dfb);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 50px;
+}
+.header img {
+    max-width: 250px;
+}
+.header-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+.header-nav a {
+    background-color: #9e5dff;
+    padding: 10px;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1.3rem;
+}
+.header-nav a:hover {
+    background-color: #893bff;
+}
+
+/* Menu de navegação */
+
+.nav {
+    background-color: #f5f5f5;
+    padding: 30px;
+}
+.nav-ul li a {
+    display: block;
+    margin: 0 auto 30px auto;
+    background-color: #fff;
+    padding: 15px;
+    min-width: 60px;
+    max-width: 130px;
+    border-radius: 5px;
+    box-shadow: 3px 3px 10px #bdbdbd;
+}
+.nav-ul li a:hover {
+    background-color: #ceaeff;
+}
+
+/* Conteúdo principal - Grid */
+
+.content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    padding: 20px;
+    max-width: 1100px;
+    margin: 40px auto;
+    grid-template-areas: 
+    "titulo especificacoes"
+    "paragrafo1 paragrafo1"
+    "lobo1 paragrafo2"
+    "lobo1 lobo2"
+    "paragrafo3 paragrafo4"
+    "citacao citacao"
+    "tabela paragrafo5"
+    "tabela paragrafo6"
+    "lobo3 lobo3"
+    ;
+}
+@media (max-width: 550px) {
+    .content {
+        grid-template-areas: 
+        "titulo titulo"
+        "especificacoes especificacoes"
+        "paragrafo1 paragrafo1"
+        "lobo1 lobo1"
+        "paragrafo2 paragrafo2"
+        "lobo2 lobo2"
+        "paragrafo3 paragrafo3"
+        "paragrafo4 paragrafo4"
+        "citacao citacao"
+        "tabela tabela"
+        "paragrafo5 paragrafo5"
+        "paragrafo6 paragrafo6"
+        "lobo3 lobo3"
+        ;
+    }
+    .titulo {
+        text-align: center;
+    }
+    .especificacoes {
+        justify-content: center;
+    }
+    .aside {
+        flex-direction: column;
+    }
+}
+.titulo {
+    grid-area: titulo;
+}
+.especificacoes {
+    grid-area: especificacoes;
+}
+.paragrafo1 {
+    grid-area: paragrafo1;
+}
+.lobo1 {
+    grid-area: lobo1;
+}
+.paragrafo2 {
+    grid-area: paragrafo2;
+}
+.lobo2 {
+    grid-area: lobo2;
+}
+.paragrafo3 {
+    grid-area: paragrafo3;
+}
+.paragrafo4 {
+    grid-area: paragrafo4;
+}
+.citacao {
+    grid-area: citacao;
+}
+.tabela {
+    grid-area: tabela;
+}
+.paragrafo5 {
+    grid-area: paragrafo5;
+}
+.paragrafo6 {
+    grid-area: paragrafo6;
+}
+.lobo3 {
+    grid-area: lobo3;
+}
+
+/* Conteúdo principal */
+
+.titulo h1 {
+    font-size: 3.75rem;
+    color: #9e5dff;
+    line-height: 50px;
+}
+.titulo span {
+    font-style: italic;
+    color: #9e5dffe1;
+}
+
+.especificacoes {
+    display: flex;
+    gap: 30px;
+    align-items: start;
+}
+.especificacoes > div {
+    width: 80px;
+    text-align: center;
+    border-radius: 5px;
+    background: linear-gradient(135deg, #8844ee, #b07dfb);
+    box-shadow: #0000001e 3px 3px 5px;
+}
+.especificacoes-container .numero {
+    font-size: 3rem;
+    color: #b07dfb;
+}
+.especificacoes-container .tipo {
+    display: block;
+    background-color: #fff;
+    color: #b07dfb;
+    padding: 3px 0;
+    border-radius: 0 0 5px 5px;
+    position: relative;
+    top: 2px;
+}
+
+.content p {
+    font-size: 1.4rem;
+    line-height: 1.5;
+    color: #4d4d4d;
+}
+.content .paragrafo2 {
+    font-size: 1rem;
+    color: #9e5dff;
+    max-width: 300px;
+}
+.lobo1 {
+    align-self: flex-end;
+    width: 100%;
+}
+.lobo2 {
+    width: 100%;
+}
+.lobo3 {
+    width: 100%;
+}
+.citacao {
+    background: linear-gradient(135deg, #8844ee, #b07dfb);
+    border-radius: 5px;
+    padding: 30px;
+}
+.citacao p {
+    color: #fff;
+    font-size: 1.5rem;
+    max-width: 600px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.tabela {
+    background: linear-gradient(135deg, #8844ee, #b07dfb);
+    padding: 30px 30px;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1.4rem;
+    align-self: start;
+}
+.tabela li {
+    border-bottom: #ffffff56 solid 3px;
+    padding: 15px 15px;
+    font-weight: 300;
+}
+.tabela .last-li {
+    border-bottom: none;
+}
+
+.aside {
+    padding: 30px;
+    background-color: #f5f5f5;
+}
+.aside img {
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+@media (max-width:1300px) {
+    .aside {
+        display: flex;
+        gap: 30px;
+    }
+}
+
+.footer {
+    background: linear-gradient(135deg, #8844ee, #b07dfb);
+    font-size: 1.5rem;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+}
+.footer p {
+    color: #fff;
+}
+
+/* Responsividade */
+
+@media (max-width: 850px) {
+    .nav-ul {
+        display: flex;
+    }
+    .nav-ul li {
+        flex: 1 0 60px;
+    }
+    .nav-ul li a {
+        margin: 20px;
+    }
+    .nav {
+        padding: 0;
+        overflow-x: auto;
+    }
+    .header {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
